@@ -1,12 +1,16 @@
 """批次偵測圖片，列出每張圖片與全部圖片的物件統計。"""
 
 from collections import Counter
+import os
 from pathlib import Path
-
-from ultralytics import YOLO
 
 
 PROJECT_DIR = Path(__file__).resolve().parent
+os.environ.setdefault("YOLO_CONFIG_DIR", str(PROJECT_DIR / "Ultralytics"))
+
+from ultralytics import YOLO  # noqa: E402
+
+
 INPUT_DIR = PROJECT_DIR / "input_images"
 OUTPUT_DIR = PROJECT_DIR / "outputs"
 MODEL_NAME = "yolo26n.pt"
@@ -57,4 +61,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

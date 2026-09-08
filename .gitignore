@@ -4,5 +4,5 @@ __pycache__/
 *.pt
 outputs/
 runs/
+Ultralytics/
 .DS_Store
-
